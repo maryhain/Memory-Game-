@@ -2,5 +2,5 @@
 .htmlhintrc
 .stylelintrc
 .eslintrc.json
-
+.gitignore.node_modules
 
