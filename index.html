@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Matching Game</title>
+    <title>Memory Card Game</title>
     <meta name="description" content="">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-
     <div class="container">
         <header>
-            <h1>Matching Game of Memory</h1>
+          <div class="title"><h1>Memory Card Game</h1></div>
         </header>
 
         <section class="score-panel">
@@ -24,10 +23,9 @@
         		<li><i class="fa fa-star"></i></li>
         	</ul>
 
-        	<span class="moves-label">Number of moves: </span><span class="moves">0</span>
-
-            <div class="reset-icon">
-        		<i class="fa fa-repeat"></i>
+        	<span class="moves-label"> Moves: </span><span class="moves">0</span>
+            <div class="restartbtn"><button type="myBtn">
+        		<i class="fa fa-repeat"></i></button>
         	</div>
         </section>
 
@@ -80,37 +78,33 @@
             <li class="card">
                 <i class="fa fa-cube"></i>
             </li>
-        </ul>
-
-        <!-- <section class="matched-box">
-            <h2>Matched</h2>
-            <ul class="cleared">
-            </ul>
-        </section> -->
-
-        <div class="modal-background hide">
-            <div class="modal-content">
-                <div class="modal-heading">
-                    <h1 class="modal-title">Great Job!</h1>
-                    <!-- <span class="modal-close">x</span> -->
-                </div>
-                <div class="modal-stats">
-                    <span class="modal-time">Time: </span>
-                    <span class="modal-stars">Stars: </span>
-                    <span class="modal-moves">Number of moves: </span>
-                </div>
-                <div class="modal-buttons">
-                    <button class="modal-button modal-cancel">Cancel</button>
-                    <button class="modal-button modal-replay">Replay</button>
-                </div>
-            </div>
+      </ul>
+          <!-- Modal Popup -->
+<div class="modal_background hide">
+    <div class="modal_body">
+        <button class="modal_button modal_cancel">x</button>
+        <div class="modal_heading">
+            <h1 class="modal_title">Great Job!</h1>
         </div>
+        <!-- modal stats-->
+        <div class="modal_stats">
+            <span class="modal_time"> Your time</span>
+            <span class="modal_stars">Stars</span>
+            <span class="modal_moves">Moves</span>
+        </div>
+        <div class="modal_buttons">
+            <button class="modal_button modal_replay">Replay</button>
+            </div>
+    </div>
+</div> <!-- end modal-->
+               
     </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+  <footer class="footer">
+  <p>Made by Maryhain Fikry</p>
+    <p>Grow with Google & Udacity © 2018</p>
+</footer>
 </body>
 </html>
-
-
-
