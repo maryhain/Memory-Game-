@@ -1,6 +1,6 @@
 // -------GLOBAL --------
 const deck = document.querySelector('.deck');
-const x = document.querySelector('.restartbtn');
+//const x = document.querySelector('.restartbtn');
 let toggledCards = []; // store all cards in an array
 let moves = 0;
 // Global variables for clock
@@ -8,6 +8,7 @@ let clockOff = true;
 let time = 0;
 let clockId;
 let matched = 0;
+// set matched return to zero
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -37,6 +38,15 @@ function shuffle(array) {
     }
 
     return array;
+}
+
+
+function initGame() {
+    let newCards = shuffle(cardArray);
+    cards.forEach(function (element, index) {
+        cards[index].className = "card";
+        cards[index].firstElementChild.className = newCards[index];
+    });
 }
 
 /*
@@ -121,8 +131,17 @@ function checkForMatch() {
             matched++; 
             if (matched === TOTAL_PAIRS) {
                 gameOver();
+             modal.reload(true); 
             }
-
+else if (matched === 16){
+  gameOver();
+   modal.reload(true);
+}
+      else if (matched === 0)
+        {
+          gameOver();
+           modal.reload(true);
+        }
     } else {
         setTimeout(() => {
             toggleCard(toggledCards[0]);
@@ -133,23 +152,39 @@ function checkForMatch() {
 }
 // game over function
 function gameOver() {
+ // if (matched.length == 16){
+     //  modal.classList.add('show');  
     stopClock();
     toggleModal();
-    writeModalStats();   
+    writeModalStats();
+    initGame();
+ // }
+ // closeModal();
+  //toggleCard(card);
 }
 
 // Stops the clock
 function stopClock() {
+  //if (matched.length == 8){
     clearInterval(clockId);
-}
+       // modal.classList.add("show");
+  //}
+ }
 
+ const modal = document.getElementById("popup1");
 // ---Make POP UP MODAL --- //
 function toggleModal() {
-    const modal = document.querySelector('.modal_background');
-    modal.classList.toggle('hide');
-}
+  
+     const modal = document.querySelector('.modal_background');
+  
+  modal.classList.toggle('hide');
 
+ }
+    
 function writeModalStats() {
+   
+        // show congratulations modal
+       
     const timeStat = document.querySelector('.modal_time');
     const clockTime = document.querySelector('.clock').innerHTML;
     const moveStat = document.querySelector('.modal_moves');
@@ -159,7 +194,11 @@ function writeModalStats() {
     timeStat.innerHTML = `Time = ${clockTime}`;
     moveStat.innerHTML = `Moves = ${moves}`;
     starStat.innerHTML = `Stars = ${stars}`;
+
+closeModal();
 }
+
+
 
 // gets stars
 function getStars() {
@@ -210,6 +249,7 @@ document.querySelector('.modal_replay').addEventListener('click' , replayGame);
 function replayGame() {
     resetGame();
     toggleModal();
+  
 }
 
 // resets the game when clicking on refresh button  
@@ -230,6 +270,12 @@ function resetClockAndTime() {
     clockOff = true;
     time = 0;
     displayTime();
+}
+function closeModal(){
+    closeicon.addEventListener("click", function(e){
+        modal.classList.remove("show");
+      //  initGame();
+    });
 }
 
 // Resets moves
@@ -254,3 +300,4 @@ function resetCards() {
         card.className = 'card';
     }
 }
+
