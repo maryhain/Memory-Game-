@@ -17,10 +17,10 @@ and make event listener for each card. If a card is clicked:
 
 ## Coding Style
    - use color: #00FFFF for card's cover before flip and #FFFFF for game background
-   - use font-family: 'Open Sans', sans-serif and 'Lobster', cursive   ad 'Lato' for the game
+   - use Google Fonts and Bootstrap and JQuery 
    - use background image :https://png.pngtree.com/element_origin_min_pic/16/08/27/2157c19a70ee5b8.jpg to make nice interface to make user 
      play more times without being bored 
-  - use Bootstrap to make small widow shown after game over and event listener for each card 
+  - use Bootstrap modal to make small widow shown after game over and event listener for each card 
   ## Built With
   Maryhain Fikry 
   
